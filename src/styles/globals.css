@@ -42,4 +42,5 @@ a {
   box-sizing: border-box;
   color: inherit;
   font: inherit;
+  transition: all 5ms;
 }
