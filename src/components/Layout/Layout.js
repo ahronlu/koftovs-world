@@ -51,7 +51,7 @@ const Layout = ({ children, title = "World Ranks" }) => {
 
       <main className={styles.main}>{children}</main>
 
-      <footer className={styles.footer}>Ahronlu @ ahronlu.com</footer>
+      <footer className={styles.footer}>Ahronlu @ <a href="#" target="_blank" rel="noopener">ahronlu.com</a></footer>
     </div>
   );
 };
