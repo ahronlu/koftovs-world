@@ -23,6 +23,7 @@
 }
 
 .themeSwitcher {
+  cursor: pointer;
   border: none;
   background-color: transparent;
   padding: 0;
