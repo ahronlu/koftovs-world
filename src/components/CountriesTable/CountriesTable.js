@@ -4,6 +4,7 @@ import {
   KeyboardArrowUpRounded,
 } from "@material-ui/icons";
 import { useState } from "react";
+import numberWithCommas from "../../utils/numberWithCommas.js"
 import styles from "./CountriesTable.module.css";
 
 const orderBy = (countries, value, direction) => {
@@ -105,18 +106,20 @@ const CountriesTable = ({ countries }) => {
 
       {orderedCountries.map((country) => (
         <Link href={`/country/${country.alpha3Code}`} key={country.name}>
+          <a>
           <div className={styles.row}>
             <div className={styles.flag}>
               <img src={country.flag} alt={country.name} />
             </div>
             <div className={styles.name}>{country.name}</div>
 
-            <div className={styles.population}>{country.population}</div>
+            <div className={styles.population}>{numberWithCommas(country.population)}</div>
 
-            <div className={styles.area}>{country.area || 0}</div>
+            <div className={styles.area}>{country.area ? numberWithCommas(country.area) : '0'}</div>
 
             <div className={styles.gini}>{country.gini || 0} %</div>
           </div>
+          </a>
         </Link>
       ))}
     </div>

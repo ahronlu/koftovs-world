@@ -1,5 +1,7 @@
+import Link from "next/link"
 import { useEffect, useState } from "react";
 import Layout from "../../components/Layout/Layout";
+import numberWithCommas from "../../utils/numberWithCommas";
 import styles from "./Country.module.css";
 
 const getCountry = async (id) => {
@@ -40,13 +42,13 @@ const Country = ({ country }) => {
             <div className={styles.overview_numbers}>
               <div className={styles.overview_population}>
                 <div className={styles.overview_value}>
-                  {country.population}
+                  {numberWithCommas(country.population)}
                 </div>
                 <div className={styles.overview_label}>Population</div>
               </div>
 
               <div className={styles.overview_area}>
-                <div className={styles.overview_value}>{country.area}</div>
+                <div className={styles.overview_value}>{numberWithCommas(country.area)}</div>
                 <div className={styles.overview_label}>Area</div>
               </div>
             </div>
@@ -95,15 +97,19 @@ const Country = ({ country }) => {
               </div>
 
               <div className={styles.details_panel_borders_container}>
-                {borders.map(({ flag, name }) => (
-                  <div className={styles.details_panel_borders_country}>
-                    <img src={flag} alt={name}></img>
+                {borders.length ? borders.map(({ flag, name,alpha3Code }) => (
+                  <Link href={`/country/${alpha3Code}`}>
+                    <a>
+                        <div className={styles.details_panel_borders_country}>
+                          <img src={flag} alt={name}></img>
 
-                    <div className={styles.details_panel_borders_name}>
-                      {name}
-                    </div>
-                  </div>
-                ))}
+                          <div className={styles.details_panel_borders_name}>
+                            {name}
+                          </div>
+                        </div>
+                    </a>
+                  </Link>
+                )): ''}
               </div>
             </div>
           </div>
@@ -115,21 +121,21 @@ const Country = ({ country }) => {
 
 export default Country;
 
-export const getStaticPaths = async () => {
-  const res = await fetch("https://restcountries.eu/rest/v2/all");
-  const countries = await res.json();
+// export const getStaticPaths = async () => {
+//   const res = await fetch("https://restcountries.eu/rest/v2/all");
+//   const countries = await res.json();
 
-  const paths = countries.map((country) => ({
-    params: { id: country.alpha3Code },
-  }));
+//   const paths = countries.map((country) => ({
+//     params: { id: country.alpha3Code },
+//   }));
 
-  return {
-    paths,
-    fallback: false,
-  };
-};
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
 
-export const getStaticProps = async ({ params }) => {
+export const getServerSideProps = async ({ params }) => {
   const country = await getCountry(params.id);
 
   return {

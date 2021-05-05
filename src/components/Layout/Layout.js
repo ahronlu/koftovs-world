@@ -39,6 +39,7 @@ const Layout = ({ children, title = "World Ranks" }) => {
 
       <header className={styles.header}>
         <Link href="/">
+          <a>
           <svg
             width="175"
             height="24"
@@ -64,6 +65,7 @@ const Layout = ({ children, title = "World Ranks" }) => {
             />
             <rect y="4" width="7.33333" height="4.4" rx="2" fill="#21B6B7" />
           </svg>
+          </a>
         </Link>
 
         <button className={styles.themeSwitcher} onClick={switchTheme}>
