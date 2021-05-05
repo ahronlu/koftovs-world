@@ -44,7 +44,7 @@ const Layout = ({ children, title = "World Ranks" }) => {
           </a>
         </Link>
 
-        <button className={styles.themeSwitcher} onClick={switchTheme}>
+        <button className={styles.themeSwitcher} onClick={switchTheme} aria-label="toggle dark/light mdde">
           {theme === 'light' ? <Brightness3 /> : <Brightness7 /> }
         </button>
       </header>
