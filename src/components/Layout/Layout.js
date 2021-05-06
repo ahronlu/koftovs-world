@@ -35,6 +35,7 @@ const Layout = ({ children, title = "World Ranks" }) => {
       <Head>
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="descriptiom" content="World countries" />
       </Head>
 
       <header className={styles.header}>
