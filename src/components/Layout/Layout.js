@@ -35,7 +35,31 @@ const Layout = ({ children, title = "World Ranks" }) => {
       <Head>
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="descriptiom" content="World countries" />
+        <meta charSet="utf-8" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+        />
+        <meta name="description" content="World Ranks" />
+        <meta name="keywords" content="NextJS React PWA" />
+        <title>Next.js PWA Example</title>
+
+        <link rel="manifest" href="/manifest.json" />
+        <link
+          href="/icons/manifest-icon-192.png"
+          rel="icon"
+          type="image/png"
+          sizes="192x192"
+        />
+        <link
+          href="/icons/manifest-icon-512.png"
+          rel="icon"
+          type="image/png"
+          sizes="512x512"
+        />
+        <link rel="apple-touch-icon" href="/apple-icon-180.png"></link>
+        <meta name="theme-color" content="#606060" />
       </Head>
 
       <header className={styles.header}>
