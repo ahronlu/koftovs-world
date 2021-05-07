@@ -33,7 +33,6 @@ const Layout = ({ children, title = "World Ranks" }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -41,10 +40,9 @@ const Layout = ({ children, title = "World Ranks" }) => {
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
         />
-        <meta name="description" content="World Ranks" />
-        <meta name="keywords" content="NextJS React PWA" />
-        <title>Next.js PWA Example</title>
-
+        <meta name="description" content="World" />
+        <meta name="keywords" content="Countries API" />
+        <title>{title}</title>
         <link rel="manifest" href="/manifest.json" />
         <link
           href="/icons/manifest-icon-192.png"
@@ -70,7 +68,7 @@ const Layout = ({ children, title = "World Ranks" }) => {
         </Link>
 
         <button className={styles.themeSwitcher} onClick={switchTheme} aria-label="toggle dark/light mdde">
-          {theme === 'light' ? <Brightness3 /> : <Brightness7 /> }
+          {theme === 'dark' ? <Brightness7 /> : <Brightness3 />}
         </button>
       </header>
 
