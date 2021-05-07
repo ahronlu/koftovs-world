@@ -58,6 +58,7 @@ const Layout = ({ children, title = "World Ranks" }) => {
         />
         <link rel="apple-touch-icon" href="/apple-icon-180.png"></link>
         <meta name="theme-color" content="#606060" />
+        
       </Head>
 
       <header className={styles.header}>
