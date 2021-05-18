@@ -17,7 +17,6 @@ export default function Home({ countries }) {
 
   const onInputChange = (e) => {
     e.preventDefault();
-
     setKeyword(e.target.value.toLowerCase());
   };
 
