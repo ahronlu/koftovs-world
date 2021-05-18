@@ -40,13 +40,13 @@ const Country = ({ country }) => {
             <div className={styles.overview_numbers}>
               <div className={styles.overview_population}>
                 <div className={styles.overview_value}>
-                  {numberWithCommas(country.population)}
+                  {country.population && numberWithCommas(country.population)}
                 </div>
                 <div className={styles.overview_label}>Population</div>
               </div>
 
               <div className={styles.overview_area}>
-                <div className={styles.overview_value}>{numberWithCommas(country.area)}</div>
+                <div className={styles.overview_value}>{country.area && numberWithCommas(country.area)}</div>
                 <div className={styles.overview_label}>Area</div>
               </div>
             </div>
