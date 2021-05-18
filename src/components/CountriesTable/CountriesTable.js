@@ -113,7 +113,7 @@ const CountriesTable = ({ countries }) => {
             </div>
             <div className={styles.name}>{country.name}</div>
 
-            <div className={styles.population}>{numberWithCommas(country.population)}</div>
+            <div className={styles.population}>{country.population && numberWithCommas(country.population)}</div>
 
             <div className={styles.area}>{country.area ? numberWithCommas(country.area) : '0'}</div>
 
